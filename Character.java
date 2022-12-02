@@ -19,7 +19,9 @@ public class Character {
         allHeads.add(new Image("File:Images/Heads/Head3.png"));
         allHeads.add(new Image("File:Images/Heads/Head4.png"));
         allChests.add(new Image("File:Images/Chests/Chest1.png"));
+        allChests.add(new Image("File:Images/Chests/Chest2.png"));
         allLegs.add(new Image("File:Images/Legs/Legs1.png"));
+        allLegs.add(new Image("File:Images/Legs/Legs2.png"));
         this.Head = allHeads.get(headIndex);
         this.Chest = allChests.get(chestIndex);
         this.Legs = allChests.get(legsIndex);
