@@ -1,6 +1,10 @@
+import java.io.InputStream;
+
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
@@ -29,12 +33,13 @@ public class CharacterPane extends Pane {
         gPane.add(btnLegsRight, 2,2,1,1);
         gPane.add(btnLegsLeft,0,2,1,1);
         pane.setCenter(gPane);
-        Label headTemp = new Label("[ADD AVATAR HEAD HERE]");
-        gPane.add(headTemp,1, 0, 1, 1);
-        Label chestTemp = new Label("[ADD AVATAR CHEST HERE]");
-        gPane.add(chestTemp,1, 1, 1, 1);
-        Label legsTemp = new Label("[ADD AVATAR LEGS HERE]");
-        gPane.add(legsTemp,1, 2, 1, 1);
+
+        Character defaultCharacter = new Character();
+        gPane.add(new ImageView(defaultCharacter.getHead()), 1, 0);
+        gPane.add(new ImageView(defaultCharacter.getChest()), 1, 1);
+        gPane.add(new ImageView(defaultCharacter.getLegs()), 1, 2);
+
+        
     }
 
     public GridPane getGridPane(){
