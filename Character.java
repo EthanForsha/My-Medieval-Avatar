@@ -24,7 +24,7 @@ public class Character {
         allLegs.add(new Image("File:Images/Legs/Legs2.png"));
         this.Head = allHeads.get(headIndex);
         this.Chest = allChests.get(chestIndex);
-        this.Legs = allChests.get(legsIndex);
+        this.Legs = allLegs.get(legsIndex);
     }
 
     public Image getHead(){
