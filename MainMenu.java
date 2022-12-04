@@ -9,15 +9,16 @@ import javafx.scene.layout.BackgroundPosition;
 import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 
-public class MainMenu {
+public class MainMenu 
+{
+
     private BorderPane bPane;
     
-    public MainMenu(){
-
+    public MainMenu()
+    {
         bPane = new BorderPane();
         Button btnPlay = new Button("Play");
         Button btnExit = new Button("Exit");
@@ -34,19 +35,20 @@ public class MainMenu {
         bPane.setBackground(new Background(backgroundMain));
 
         // Allows the user to enter the game from the main menu
-        btnPlay.setOnAction(e -> {
+        btnPlay.setOnAction(e -> 
+        {
             btnPlay.setVisible(false);
             btnExit.setVisible(false);
             title.setVisible(false);
             BackgroundImage backgroundHome = new BackgroundImage(new Image("File:Images/Backgrounds/Home.jpg", 600, 600, false, true), BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
             bPane.setBackground(new Background(backgroundHome));
             CharacterPane characterPane = new CharacterPane();
-            GridPane gPane = characterPane.getGridPane();
-            bPane.setCenter(gPane);
+            bPane.setCenter(characterPane.getBorderPane());
         });
 
         // Allows the user to exit the application using the exit button on the main menu
-        btnExit.setOnAction( e -> {
+        btnExit.setOnAction( e -> 
+        {
             Platform.exit();
         });
 
@@ -73,7 +75,8 @@ public class MainMenu {
 
     }
 
-    public BorderPane getBorderPane(){
+    public BorderPane getBorderPane()
+    {
         return this.bPane;
     }
 }
