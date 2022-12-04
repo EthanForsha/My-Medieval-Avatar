@@ -1,6 +1,4 @@
-import javafx.application.Application;
 import javafx.application.Platform;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -19,7 +17,7 @@ public class MainMenu {
     private BorderPane bPane;
     
     public MainMenu(){
-        
+
         bPane = new BorderPane();
         Button btnPlay = new Button("Play");
         Button btnExit = new Button("Exit");
@@ -34,8 +32,6 @@ public class MainMenu {
         title.setPreserveRatio(true);
         BackgroundImage backgroundMain = new BackgroundImage(new Image("File:Images/Backgrounds/Main Menu.jpg", 600, 600, false, true), BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
         bPane.setBackground(new Background(backgroundMain));
-        CharacterPane characterPane = new CharacterPane();
-        GridPane gPane = characterPane.getGridPane();
 
         // Allows the user to enter the game from the main menu
         btnPlay.setOnAction(e -> {
@@ -44,6 +40,8 @@ public class MainMenu {
             title.setVisible(false);
             BackgroundImage backgroundHome = new BackgroundImage(new Image("File:Images/Backgrounds/Home.jpg", 600, 600, false, true), BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
             bPane.setBackground(new Background(backgroundHome));
+            CharacterPane characterPane = new CharacterPane();
+            GridPane gPane = characterPane.getGridPane();
             bPane.setCenter(gPane);
         });
 
@@ -52,18 +50,21 @@ public class MainMenu {
             Platform.exit();
         });
 
+        // Adds a title for the main menu
         AnchorPane titlePane = new AnchorPane();
         AnchorPane.setLeftAnchor(title, 15d);
         AnchorPane.setTopAnchor(title, 60d);
         bPane.getChildren().add(titlePane);
         titlePane.getChildren().add(title);
 
+        // Adds a play button to the main menu
         AnchorPane customizePane = new AnchorPane();
         AnchorPane.setLeftAnchor(btnPlay, 145d);
         AnchorPane.setTopAnchor(btnPlay, 115d);
         bPane.getChildren().add(customizePane);
         customizePane.getChildren().add(btnPlay);
 
+        // Adds an exit button the main menu
         AnchorPane exitPane = new AnchorPane();
         AnchorPane.setLeftAnchor(btnExit, 145d);
         AnchorPane.setTopAnchor(btnExit, 160d);

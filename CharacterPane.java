@@ -6,12 +6,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundImage;
-import javafx.scene.layout.BackgroundPosition;
-import javafx.scene.layout.BackgroundRepeat;
-import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
@@ -30,6 +24,7 @@ public class CharacterPane extends Pane {
         gPane.setHgap(30);
         gPane.setVgap(-10);
 
+        // Sets up the customization slider buttons
         Button btnHeadLeft = new Button("<");
         Font font = Font.font("Arial", FontWeight.NORMAL, 25);
         btnHeadLeft.setFont(font);
@@ -51,6 +46,10 @@ public class CharacterPane extends Pane {
         gPane.add(btnLegsLeft,0,2);
         bPane.setCenter(gPane);
 
+        // Sets up 3 buttons for the customization page
+        // Exit button to exit the app
+        // Preview button to preview character on different backgrounds 
+        // Armor button to preview "end game" armor on character
         Label emptySpace = new Label("");
         Label emptySpace2 = new Label("");
         Label emptySpace3 = new Label("");
@@ -68,6 +67,8 @@ public class CharacterPane extends Pane {
         btnArmor.setFont(font2);
         gPane.add(btnArmor, 2, 4);
 
+        // Creates a character for the user to customize
+        // Starts with a default character
         Character character = new Character();
         Image Head = character.getHead();
         Image Chest = character.getChest();
@@ -79,6 +80,7 @@ public class CharacterPane extends Pane {
         gPane.add(LegsView, 1, 2);
         gPane.add(ChestView, 1, 1);
 
+        // Setups up functionality for the previous head option button
         btnHeadLeft.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -90,6 +92,7 @@ public class CharacterPane extends Pane {
             }
         });
 
+        // Setups up functionality for the next head option button
         btnHeadRight.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -101,6 +104,7 @@ public class CharacterPane extends Pane {
             }
         });
 
+        // Setups up functionality for the previous chest option button
         btnChestLeft.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -112,6 +116,7 @@ public class CharacterPane extends Pane {
             }
         });
 
+        // Setups up functionality for the next chest option button
         btnChestRight.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -123,6 +128,7 @@ public class CharacterPane extends Pane {
             }
         });
 
+        // Setups up functionality for the previous legs option button
         btnLegsLeft.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -134,6 +140,7 @@ public class CharacterPane extends Pane {
             }
         });
 
+        // Setups up functionality for the next legs option button
         btnLegsRight.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -145,6 +152,9 @@ public class CharacterPane extends Pane {
             }
         });
 
+        // Sets up functionality for the armor toggle button
+        // Switches armor on the character and hides current customization options and buttons
+        // Switches back to avatar after user presses again
         btnArmor.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -180,6 +190,7 @@ public class CharacterPane extends Pane {
             }
         });
 
+        // Sets up the functionality for the exit button which exits the app
         btnExit.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -188,6 +199,7 @@ public class CharacterPane extends Pane {
         });
     }
 
+    // Returns the gridpane that contains the character
     public GridPane getGridPane(){
         return this.gPane;
     }
