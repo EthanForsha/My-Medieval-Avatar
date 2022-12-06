@@ -1,6 +1,3 @@
-import java.io.CharConversionException;
-import java.util.Stack;
-
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
