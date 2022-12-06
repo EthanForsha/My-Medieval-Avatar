@@ -1,3 +1,6 @@
+import java.io.CharConversionException;
+import java.util.Stack;
+
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -56,6 +59,7 @@ public class CharacterPane extends Character
         // Exit button to exit the app
         // Preview button to preview character on different backgrounds 
         // Armor button to preview "end game" armor on character
+        // Finalize Character button to save the character and return to the main menu
         Label emptySpace = new Label("");
         Label emptySpace2 = new Label("");
         Label emptySpace3 = new Label("");
